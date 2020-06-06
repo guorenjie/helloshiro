@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+</head>
+<body>
+<a href="/">回到首页</a>
+<form action="/user/update" method="post">
+    账号：<input type="text" name="user.username">
+    密码：<input type="password" name="user.password">
+<!--    <input shiro:hasRole="管理员" type="submit" value="修改用户信息">-->
+    <input shiro:hasPermission="user:update" type="submit" value="修改用户信息">
+</form>
+</body>
+</html>
